@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>FitTrack Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="app.js" defer></script>
+</head>
+<body>
+    <!-- iOS Status Bar -->
+    <div class="ios-status-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar (iOS Slide Menu) -->
+    <div class="sidebar" id="sidebar">
+        <div class="profile-card">
+            <img src="https://i.pravatar.cc/80" alt="Profile">
+            <div>
+                <h3>John Doe</h3>
+                <p>Level 12</p>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#" class="nav-item" data-page="workouts"><i class="fas fa-dumbbell"></i> Workouts</a>
+            <a href="#" class="nav-item" data-page="progress"><i class="fas fa-chart-line"></i> Progress</a>
+            <a href="#" class="nav-item" data-page="calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- DASHBOARD -->
+        <div class="page active" id="dashboard">
+            <div class="header">
+                <h1>Today</h1>
+                <button class="voice-btn" id="voiceBtn">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+            
+            <!-- Rings (Apple Fitness Style) -->
+            <div class="rings-container">
+                <div class="ring-item">
+                    <div class="ring" data-progress="78">
+                        <svg viewBox="0 0 36 36">
+                            <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="ring-fg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        </svg>
+                        <div class="ring-label">Move</div>
+                        <div class="ring-value">245</div>
+                    </div>
+                </div>
+                <div class="ring-item"><!-- Similar for Exercise, Stand --></div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1,250kg</div>
+                    <div class="stat-label">Total Lifted</div>
+                </div>
+            </div>
+
+            <!-- Today's Workout -->
+            <div class="workout-card primary" onclick="startWorkout()">
+                <div>
+                    <h3>Day 1: Chest Day</h3>
+                    <p>4 exercises • 45 min</p>
+                </div>
+                <i class="fas fa-play-circle"></i>
+            </div>
+        </div>
+
+        <!-- WORKOUTS -->
+        <div class="page" id="workouts">
+            <div class="header">
+                <h1>Workouts</h1>
+                <div class="segmented-control">
+                    <button class="segment active">Gym</button>
+                    <button class="segment">Home</button>
+                </div>
+            </div>
+            <div class="workouts-list" id="workoutsList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- PROGRESS -->
+        <div class="page" id="progress">
+            <div class="header">
+                <h1>Progress</h1>
+            </div>
+            <canvas id="progressChart" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Workout Modal -->
+    <div class="modal" id="workoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Chest Day</h2>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="exercises-list" id="exercisesList"></div>
+            <div class="modal-footer">
+                <button class="btn primary" onclick="logWorkout()">Log Workout</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
