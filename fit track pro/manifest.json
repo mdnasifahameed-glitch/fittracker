@@ -1,0 +1,16 @@
+{
+  "name": "FitTrack Pro",
+  "short_name": "FitTrack",
+  "description": "Apple Fitness tracker with 6-day plans",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f2f7",
+  "theme_color": "#007AFF",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjMDA3QUZGIiByeD0iMjQiLz4KPHRleHQgeD0iNjQiIHk9IjcwIiBmb250LWZhbWlseT0iLVN5c3RlbS1Gb250LCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+RlQ8L3RleHQ+Cjwvc3ZnPgo=",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
